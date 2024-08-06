@@ -3,9 +3,23 @@ require("dotenv").config()
 
 exports.createPokemon = async (req, res) => {
   try {
-    const { pokemonOwnerName, direction, initialpositionx, pokemonName, pokemonAbility, initialPositiony, speed, lastlyDirection } = req.body;
+    const { pokemonOwnerName,
+            direction, 
+            initialpositionx, 
+            pokemonName, 
+            pokemonAbility, 
+            initialPositiony, 
+            speed, 
+            lastlyDirection } = req.body;
 
-    if (!pokemonOwnerName || !direction || !initialpositionx || !pokemonName || !pokemonAbility || !initialPositiony || !speed || !lastlyDirection) {
+    if (!pokemonOwnerName ||
+        !direction || 
+        !initialpositionx || 
+        !pokemonName || 
+        !pokemonAbility || 
+        !initialPositiony || 
+        !speed || 
+        !lastlyDirection) {
       return res.status(400).json({
         success: false,
         message: "All fields are required",
